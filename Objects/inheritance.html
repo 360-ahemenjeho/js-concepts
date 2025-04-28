@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Object Inheritance</title>
+
+    <script>
+      function Person({ name, age, gender, occupation, address }) {
+        this.name = name
+        this.age = age
+        this.gender = gender
+        this.occupation = occupation
+        this.address = address
+      }
+
+      Person.prototype.generalInfo = function () {
+        return `My name is ${this.name}. I am ${this.gender} at ${this.age} yrs. My occupation is ${this.occupation} and I live at ${this.address}.`
+      }
+
+      function Footballer({
+        name,
+        age,
+        gender,
+        occupation,
+        address,
+        team,
+        position,
+        jerseyNumber
+      }) {
+        // pass props to Person constructor.
+        Person.call(this, { name, age, gender, occupation, address })
+
+        // this props.
+        this.team = team
+        this.position = position
+        this.jerseyNumber = jerseyNumber
+      }
+
+      Footballer.prototype.playerInfo = function () {
+        return `My team is ${this.team}. I play position ${this.position} and my Jersey Number is ${this.jerseyNumber}.`
+      }
+
+      Object.setPrototypeOf(Footballer.prototype, Person.prototype)
+
+      const ronaldo = new Footballer({
+        name: 'Christiano Ronaldo',
+        age: 37,
+        gender: 'Male',
+        occupation: 'Football',
+        address: 'Saudi Arabia',
+        team: 'Al Nassr',
+        position: 'forward',
+        jerseyNumber: 7
+      })
+
+      console.log('GENERAL INFO: ', ronaldo.generalInfo())
+      console.log('FOOTBALL INFO: ', ronaldo.playerInfo())
+    </script>
+  </head>
+  <body></body>
+</html>

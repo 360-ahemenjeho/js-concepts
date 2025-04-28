@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book</title>
+    <script>
+      function Book({ title, author, pages, readStatus }) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.readStatus = readStatus
+
+        this.info = function () {
+          return `The ${this.title} by ${this.author}, ${
+            this.pages
+          } pages, ${getReadingStatus(this.readStatus)}`
+        }
+      }
+
+      function getReadingStatus(status) {
+        const map = {
+          1: 'read.',
+          0: 'not read yet!'
+        }
+
+        return map[Number(status)]
+      }
+
+      const animalFarm = new Book({
+        title: 'Animal Farm',
+        author: 'George Owls',
+        pages: 400,
+        readStatus: true
+      })
+
+      console.log(animalFarm.info())
+
+      console.log('Book Proptotype: ', Object.getPrototypeOf(animalFarm))
+    </script>
+  </head>
+  <body></body>
+</html>

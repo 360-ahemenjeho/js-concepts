@@ -1,0 +1,24 @@
+.color-1 {
+    color: red;
+}
+
+.color-2 {
+    color: blue;
+}
+
+.color-3 {
+    color: blueviolet;
+}
+
+.color-4 {
+    color: green;
+}
+
+.color-5 {
+    color: goldenrod;
+}
+
+.init {
+    font-weight: bold;
+    font-size: 30px;
+}

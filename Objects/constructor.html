@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Object Constructor</title>
+    <script>
+      // creating object constructor (blueprint)
+      function FamilyMember({
+        surname,
+        firstname,
+        lastname,
+        role,
+        position,
+        gender,
+        skinColor
+      }) {
+        console.log(surname)
+        this.surname = surname
+        this.firstname = firstname
+        this.lastname = lastname
+        this.role = role
+        this.position = position
+        this.gender = gender
+        this.skinColor = skinColor
+      }
+
+      const israel = new FamilyMember({
+        surname: 'Abraham',
+        firstname: 'Aondofa',
+        lastname: 'Israel',
+        role: 'Son',
+        position: '1st',
+        gender: 'Male',
+        skinColor: 'Fair'
+      })
+
+      console.log('ISRAEL: ', israel)
+    </script>
+  </head>
+  <body></body>
+</html>
