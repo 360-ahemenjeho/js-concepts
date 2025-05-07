@@ -25,6 +25,17 @@
         this.skinColor = skinColor
       }
 
+      function Artists(name, genre, totalAlbums, community) {
+        this.name = name
+        this.genre = genre
+        this.totalAlbums = totalAlbums
+        this.community = community
+
+        this.updateAlbumCount = function (n) {
+          this.totalAlbums = n
+        }
+      }
+
       const israel = new FamilyMember({
         surname: 'Abraham',
         firstname: 'Aondofa',
@@ -35,7 +46,16 @@
         skinColor: 'Fair'
       })
 
+      const wiz = new Artists('Wizkid', 'Afro beats, R&B', 4, 'FC')
+      const davido = new Artists('Davido', 'Afro beats', 5, '30BG')
+      const rema = new Artists('Rema', 'Afro beats', 3, 'Ravers')
+
       console.log('ISRAEL: ', israel)
+      console.log('rema...', rema)
+      console.log('davido...', davido)
+      console.log('wiz...', wiz)
+      rema.updateAlbumCount(4)
+      console.log('new rema...', rema)
     </script>
   </head>
   <body></body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Class</title>
+  </head>
+  <body>
+    <script>
+      class User {
+        constructor(firstName, lastName, age) {
+          this.firstName = firstName
+          this.lastName = lastName
+          this.age = age
+        }
+
+        getFullName() {
+          return `${this.firstName} ${this.lastName}`
+        }
+
+        setAge(newAge) {
+          this.age = newAge
+        }
+      }
+
+      const vani = new User('Vanen', 'Haaga', 17)
+      console.log('first name...', vani.firstName)
+      console.log('last name...', vani.lastName)
+      console.log('full name...', vani.getFullName())
+      console.log('age...', vani.age)
+      vani.setAge(19)
+      console.log('new age...', vani.age)
+    </script>
+  </body>
+</html>

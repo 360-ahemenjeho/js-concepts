@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circle</title>
+    <script>
+      // learn the concept of static methods / fields, getters / setters, fields and methods.
+      const context = ''
+      class Circle {
+        constructor(r) {
+          this.radius = r
+        }
+
+        // private fields and methods can only be accessed within the class or class methods.
+        // they cannot be accessed in getters / setters and in statics.
+        #msg = 'success '
+
+        get urMsg() {
+          return this.#msg
+        }
+
+        set urMsg(msg) {
+          this.#msg = msg
+        }
+
+        static PI = 3.14159
+        static radians(n) {
+          if (n <= 0 || n > 2) {
+            console.error('invalid param | range: > 0 n < 2')
+            return 0
+          }
+
+          return this.PI * n
+        }
+
+        diameter() {
+          return this.urMsg + this.radius * 2
+        }
+      }
+
+      const circle1 = new Circle(4)
+
+      console.log('1.5 rad: ', Circle.radians(1.5))
+      console.log('diameter (4px): ', circle1.diameter(4))
+      circle1.urMsg = 'diameter ~ '
+      console.log('diameter (8px): ', circle1.diameter(8))
+    </script>
+  </head>
+  <body></body>
+</html>

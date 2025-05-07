@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getters and setters</title>
+  </head>
+  <body>
+    <script>
+      function User(firstname, lastname) {
+        return {
+          firstname: firstname,
+          lastname: lastname,
+
+          get fullName() {
+            return `${this.firstname} ${this.lastname}`
+          },
+          set fullName(name) {
+            const splitName = name.split(' ')
+            this.firstname = splitName[0] || 'Invalid'
+            this.lastname = splitName[1] || 'Invalid'
+          }
+        }
+      }
+
+      console.log('User literal prototype: ', User.prototype)
+
+      const andy = User('Andy', 'Tega')
+      console.log("andy's full name...", andy.fullName)
+      andy.fullName = 'Ahemen Jeho'
+      console.log("andy's renamed...", andy.fullName)
+    </script>
+  </body>
+</html>

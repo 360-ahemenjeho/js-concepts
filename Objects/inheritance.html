@@ -6,6 +6,8 @@
     <title>JS Object Inheritance</title>
 
     <script>
+      // inheritance can also be called extension.
+
       function Person({ name, age, gender, occupation, address }) {
         this.name = name
         this.age = age
@@ -41,6 +43,7 @@
         return `My team is ${this.team}. I play position ${this.position} and my Jersey Number is ${this.jerseyNumber}.`
       }
 
+      // allow Footballer to inherit prototypes of Person
       Object.setPrototypeOf(Footballer.prototype, Person.prototype)
 
       const ronaldo = new Footballer({
@@ -53,6 +56,8 @@
         position: 'forward',
         jerseyNumber: 7
       })
+
+      console.log('Person prototype: ', Person.prototype)
 
       console.log('GENERAL INFO: ', ronaldo.generalInfo())
       console.log('FOOTBALL INFO: ', ronaldo.playerInfo())

@@ -10,12 +10,12 @@
         this.author = author
         this.pages = pages
         this.readStatus = readStatus
+      }
 
-        this.info = function () {
-          return `The ${this.title} by ${this.author}, ${
-            this.pages
-          } pages, ${getReadingStatus(this.readStatus)}`
-        }
+      Book.prototype.info = function () {
+        return `The ${this.title} by ${this.author}, ${
+          this.pages
+        } pages, ${getReadingStatus(this.readStatus)}`
       }
 
       function getReadingStatus(status) {
