@@ -1,0 +1,24 @@
+{
+  "name": "first_npm",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "My first npm journey!",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "npm",
+    "first",
+    "beginner"
+  ],
+  "author": "c8tor",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
